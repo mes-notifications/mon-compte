@@ -4,9 +4,9 @@
 <body>
 <script>
 const offres = [
-    {url: 'https://ads.adextrem.com/delivery/directlink.php?slot=23800&keypass=61scx1cv&email=%EMAIL%&tracker1=mes-notifications&tracker2=agentic', poids: 33},
-    {url: 'https://www.meilleurrdv.fr/voir-profil/?src=tmii3&pf_email=%EMAIL%&sbsrc1=mes-notifications&sbsrc2=agentic', poids: 33},
-    {url: 'https://pdtrcks.com/v1/redirect/40221?clickid=&email=%EMAIL%&utm_term=mes-notifications', poids: 33},
+    {url: 'https://ads.adextrem.com/delivery/directlink.php?slot=23800&keypass=61scx1cv&email=%EMAIL%&tracker1=mes-notifications&tracker2=agentic', poids: 10},
+    {url: 'https://www.meilleurrdv.fr/voir-profil/?src=tmii3&pf_email=%EMAIL%&sbsrc1=mes-notifications&sbsrc2=agentic', poids: 40},
+    {url: 'https://pdtrcks.com/v1/redirect/40221?clickid=&email=%EMAIL%&utm_term=mes-notifications', poids: 40},
 ];
 const email = new URLSearchParams(window.location.search).get('u') || '';
 const totalPoids = offres.reduce((sum, o) => sum + o.poids, 0);
