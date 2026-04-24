@@ -3,15 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lecteur Privé Vidalytics</title>
+    <title>Lecteur Vidalytics Réparé</title>
     <style>
-        body { background-color: #111; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .video-container { width: 90%; max-width: 1000px; aspect-ratio: 16/9; background: #000; }
+        /* On nettoie les marges par défaut */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Empêche le scroll si le player déborde */
+        }
+
+        /* Le conteneur qui va garder le ratio 16:9 */
+        .main-wrapper {
+            width: 100vw;
+            height: 56.25vw; /* Ratio 16:9 basé sur la largeur */
+            max-height: 100vh;
+            max-width: 177.78vh; /* Ratio 16:9 basé sur la hauteur */
+            margin: auto;
+            position: relative;
+        }
+
+        /* On force l'embed Vidalytics à remplir ce conteneur */
+        #vidalytics_embed_1lpNmdKWcoDVlW_I {
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        /* Force les éléments internes (iframes injectées) à suivre */
+        #vidalytics_embed_1lpNmdKWcoDVlW_I iframe {
+            width: 100% !important;
+            height: 100% !important;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
     </style>
 </head>
 <body>
 
-    <div id="vidalytics_embed_1lpNmdKWcoDVlW_I" class="video-container"></div>
+    <div class="main-wrapper">
+        <div id="vidalytics_embed_1lpNmdKWcoDVlW_I"></div>
+    </div>
 
     <script type="text/javascript">
         (function (v, i, d, a, l, y, t, c, s) {
