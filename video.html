@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecteur Vidalytics Portable</title>
+    <style>
+        body { margin: 0; background: #000; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        #vidalytics_embed_zsIpK0a6F9FktDbY { width: 100%; max-width: 900px; }
+    </style>
+</head>
+<body>
+
+    <div id="vidalytics_embed_zsIpK0a6F9FktDbY"></div>
+
+    <script type="text/javascript">
+        (function (v, i, d, a, l, y, t, c, s) {
+            y='8TUPmx4v'; // Ton ID d'organisation
+            t='zsIpK0a6F9FktDbY'; // Ton ID de vidéo
+            s = d.createElement(i); s.src = 'https://fast.vidalytics.com/embeds/' + y + '/' + t + '/main.js';
+            s.async = true; 
+            c = d.getElementById(v + i + '_' + t);
+            c.parentNode.insertBefore(s, c);
+        })('vidalytics_', 'embed', document);
+    </script>
+
+</body>
+</html>
