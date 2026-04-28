@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Lecteur de Téléchargement Vidalytics</title>
+    <style>
+        body { background: #1a1a1a; color: white; font-family: sans-serif; text-align: center; margin: 0; padding: 20px; }
+        .nav-bar { margin-bottom: 20px; display: flex; justify-content: center; gap: 20px; align-items: center; }
+        .btn { background: #3498db; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; }
+        .btn:hover { background: #2980b9; }
+        .video-container { max-width: 1000px; margin: 0 auto; background: black; }
+        #video-title { margin-top: 10px; font-size: 1.2em; color: #ecf0f1; }
+    </style>
+</head>
+<body>
+
+    <div class="nav-bar">
+        <a href="index.html" class="btn" style="background:#7f8c8d;">⬅ Sommaire</a>
+        <a id="prev-btn" href="#" class="btn">◀ Précédent</a>
+        <span id="current-info">Chargement...</span>
+        <a id="next-btn" href="#" class="btn">Suivant ▶</a>
+    </div>
+
+    <div class="video-container">
+        <div id="vidalytics_player" style="width: 100%; position:relative; padding-top: 66.67%;"></div>
+    </div>
+    
+    <div id="video-title"></div>
+
+    <script type="text/javascript">
+        // Liste complète et ordonnée des IDs de ton inventaire
+        const videoList = [
+            "Ydi2VNj2R3PWRxZo", "GO2C7qPabteEj4CT", "zeHc5I2RmkrLEhhg", "LQy1Ng6s2xm6zSDt",
+            "kd_0NHAXrfszezou", "2PQu1gqE1UiLu4YM", "L31FgvbbJhkil9s0", "iOS5hoqYc7_PU1LA",
+            "DxhnNDsY00PLrp6c", "2GZQCRUxSfL4Imc1", "RAJAnV3GpQ_Dfqr6", "M957oBs7iafbTlmC",
+            "iksDWgDjXuGAdMuz", "6t8Zb3cecylTHBDf", "wpuSKg1YShU3aGUb", "SMhss5XRf894BZ4g",
+            "7sPqkOSHiDI2jZnG", "4TOPAjnfz2uvLq7h", "3dvbF53nuJE1UY0N", "8kqprdkET4hZJ_yR",
+            "ZFDwf3tp8ghFStqC", "JBDcACQba11uyaIa", "uA78rjf2fK9f0VwV", "Q098GxkvtpL45bxD",
+            "wQV3sEn8zn8gamNT", "5XmQ9mbh6rZz8E1x", "kzurjkacJcFmgFkV", "GwPCt7oPmTCkAjlj",
+            "rk6MjHckwysv2IC_", "Supk0g7gLF2AvNw0", "mhg7KE8yjQW5EjS0", "yGngTb_ludXQJAmQ",
+            "Qv4CwJOxaDHPQJ3G", "MG4Ts3oxav0OE20R", "p6hHnQtqFzB4amFJ", "o22WffeicNJwVEXS",
+            "jKztm5uhPZzR325p", "zE1bqIVZYPEsvCgR", "ZBQ20ByvppbuuB3Z", "JKfjaLtXnOZg9QTo",
+            "wqRDZRrnJFjp1vwY", "7fGD9_0xmeZIzptP", "5cyyjHk2oZ9B0pwM", "pyA6vLacFWh4AdVP",
+            "EZQqnDT2IT7I1EAG", "f20ro3MnQLNah7G4", "3mLWCYmZG_xbiipw", "kDU98ZYD1z1fovXg",
+            "wFkKmn30yP8Acuz3", "yJ6kUs05cCNrayZA", "fAA0KE2vzoC9NLS6", "DJtjGijKAHdpV5UE",
+            "B2El9MWPbDKckXCH", "GcHqitwWpizCks_F", "KPvURz2CE331zuXi", "L08rOEKbsq_VLMFe",
+            "8Xh_tcXXePvwQoQ_", "sAKw9nxisN475KQg", "nFl3dCGubp3G_eDM", "ssJHgyBRLj1Tszuu",
+            "c6r2ObDWF_Do3Eht", "vpnoaJcrl7O4AYAO", "Tim5HqFngMrdHMw4", "caYxEY9OUW7nC2fB",
+            "bgEbGOBeJaYryzTi", "869QIMNHWSiA8TpD", "wVqLTsaS2HvkffPJ", "f_foHsKgvNtmTakp",
+            "lzYvqpca_vriwv_F", "Tal7urcef9LI_ZJC", "_7MjfW5bcaZsQNgx", "LBJ4BCOpILxa3jtL",
+            "qq9UWR4PLdCgbVjR", "kPE0qm4Fke2kROm3", "iCX68ws8PT8GBEOl", "gzbmHnehstTV7oNK",
+            "zDM6izNLHn_fvUmg", "Xoy_ldJt9ZUyo10j", "mJZ3WqczViC1Ttqg", "b6omAjLPIUQW88Yc",
+            "52yRn_1TwLnjLRSj", "vnRRjdEtavboG3vb", "UIQcVmuOvU1cr4xm", "_t7mN5Zr_miTrGiM",
+            "Rfu7ZpCzF9CHM_9s", "Tf0Dkf_D4Gjyib7H", "fsvI5IraymYS9pWS", "gAMbHZyo20KpJcsL",
+            "pWstZ5tw_rosJstE", "DNUV75NBUJXsI2GW", "tS_KpX1o3bzLIEMM", "3QAgTfbOvpMU0RIG",
+            "N8Bw1EwKBd3b3cuC", "jQFi4wjjmRfQy5Yp", "McOSzXMYqtKTjBg4", "6rKUr2TjyIxgJ2Oa",
+            "LwzQldACVL9Kh0MO", "4X2GuKPjaEXfrxmS", "i2R0uFluSDqRpIc6", "znhEUhm4QBlRmxYa",
+            "ARH3i_9VbotrdeIH", "vVXdwZblhi9QZCEs", "i1Hp2QjfptoYgfVk", "Lf6sWaV_e7J_27Dl",
+            "GeMto5NmftWGnJnb", "YXG3tTbUWSUuWNXC", "xEYh1yVDmEoujKhX"
+        ];
+
+        const params = new URLSearchParams(window.location.search);
+        const currentId = params.get('id');
+        const currentIndex = videoList.indexOf(currentId);
+
+        if (currentIndex !== -1) {
+            // Mise à jour de la navigation
+            document.getElementById('current-info').innerText = `Vidéo ${currentIndex + 1} / ${videoList.length}`;
+            if (currentIndex > 0) document.getElementById('prev-btn').href = `viewer.html?id=${videoList[currentIndex - 1]}`;
+            if (currentIndex < videoList.length - 1) document.getElementById('next-btn').href = `viewer.html?id=${videoList[currentIndex + 1]}`;
+
+            // Code d'intégration Vidalytics Dynamique
+            const embedId = 'vidalytics_embed_' + currentId;
+            document.getElementById('vidalytics_player').id = embedId;
+
+            (function (v, i, d, a, l, y, t, c, s) {
+                y='_'+d.toLowerCase();c=d+'L';if(!v[d]){v[d]={};}if(!v[c]){v[c]={};}if(!v[y]){v[y]={};}var vl='Loader',vli=v[y][vl],vsl=v[c][vl + 'Script'],vlf=v[c][vl + 'Loaded'],ve='Embed';
+                if (!vsl){vsl=function(u,cb){
+                    if(t){cb();return;}s=i.createElement("script");s.type="text/javascript";s.async=1;s.src=u;
+                    if(s.readyState){s.onreadystatechange=function(){if(s.readyState==="loaded"||s.readyState=="complete"){s.onreadystatechange=null;vlf=1;cb();}};}else{s.onload=function(){vlf=1;cb();};}
+                    i.getElementsByTagName("head")[0].appendChild(s);
+                };}
+                vsl(l+'loader.min.js',function(){if(!vli){var vlc=v[c][vl];vli=new vlc();}vli.loadScript(l+'player.min.js',function(){var vec=v[d][ve];t=new vec();t.run(a);});});
+            })(window, document, 'Vidalytics', embedId, 'https://fast.vidalytics.com/embeds/8TUPmx4v/' + currentId + '/');
+        }
+    </script>
+</body>
+</html>
