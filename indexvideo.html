@@ -2,30 +2,110 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Sommaire de Téléchargement — Backup 2022</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sommaire Master — Backup Mai 2022</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; line-height: 1.5; color: #333; max-width: 900px; margin: 0 auto; padding: 40px; background: #fdfdfd; }
-        h1, h2 { color: #2c3e50; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        ul { list-style-type: disc; padding-left: 20px; }
-        li { margin-bottom: 8px; }
-        .play-btn { background: #27ae60; color: white !important; text-decoration: none; padding: 2px 8px; border-radius: 4px; font-weight: bold; font-size: 0.8em; margin: 0 5px; }
-        code { background: #f0f0f0; padding: 2px 4px; border-radius: 4px; }
-        .stats-box { background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 30px; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.4;
+            color: #333;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fdfdfd;
+        }
+        .container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
+        }
+        ul {
+            list-style-type: disc;
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        .play-btn {
+            display: inline-block;
+            background-color: #27ae60;
+            color: white !important;
+            text-decoration: none;
+            padding: 1px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin: 0 5px;
+            transition: background 0.2s;
+        }
+        .play-btn:hover {
+            background-color: #219150;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9em;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+        th, td {
+            text-align: left;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f8f9fa;
+        }
+        hr {
+            border: 0;
+            height: 1px;
+            background: #eee;
+            margin: 30px 0;
+        }
+        .stats-box {
+            background: #eef7ff;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 5px solid #3498db;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
 
+<div class="container">
     <h1>Inventaire complet des pages — Backup mai 2022</h1>
-    
+    <p><em>Source : dump SQL extrait du backup .wpress du 5 mai 2022.</em></p>
+
     <div class="stats-box">
         <h2>Statistiques globales</h2>
         <ul>
             <li><strong>162 pages</strong> (160 publish / 2 trash)</li>
             <li><strong>128 pages</strong> avec embed Vidalytics</li>
             <li><strong>107 vidéos Vidalytics dans des pages actives</strong></li>
+            <li><strong>2 vidéos Vidalytics orphelines</strong> (uniquement dans des revisions)</li>
             <li><strong>47 pages avec thumbnail</strong> (20 images uniques)</li>
+            <li><strong>20 titres pédagogiques</strong> extraits via lecture visuelle</li>
         </ul>
     </div>
+
+    <h2>Convention de lecture</h2>
+    <p>Chaque ligne :<br>
+    <code>ID WP — /URL/ — Titre WP stocké — vidalytics:ID — 🖼️ [thumbnail](lien) — 📝 « titre pédagogique OCR »</code></p>
+
+    <hr>
 
     <h2>Arborescence complète</h2>
     <ul>
@@ -33,32 +113,233 @@
             <ul>
                 <li><strong>ID 84</strong> — <code>/escape-hatch/module-1/</code> — Module 1
                     <ul>
-                        <li><strong>ID 82</strong> — <code>/escape-hatch/module-1/lesson-1/</code> — Lesson 1 <a href="viewer.html?id=Ydi2VNj2R3PWRxZo" class="play-btn">OUVRIR</a> <code>vidalytics:Ydi2VNj2R3PWRxZo</code></li>
-                        <li><strong>ID 86</strong> — <code>/escape-hatch/module-1/lesson-2/</code> — Lesson 2 <a href="viewer.html?id=GO2C7qPabteEj4CT" class="play-btn">OUVRIR</a> <code>vidalytics:GO2C7qPabteEj4CT</code></li>
-                        <li><strong>ID 88</strong> — <code>/escape-hatch/module-1/lesson-3/</code> — Lesson 3 <a href="viewer.html?id=zeHc5I2RmkrLEhhg" class="play-btn">OUVRIR</a> <code>vidalytics:zeHc5I2RmkrLEhhg</code></li>
-                        <li><strong>ID 90</strong> — <code>/escape-hatch/module-1/lesson-4/</code> — Lesson 4 <a href="viewer.html?id=LQy1Ng6s2xm6zSDt" class="play-btn">OUVRIR</a> <code>vidalytics:LQy1Ng6s2xm6zSDt</code></li>
+                        <li><strong>ID 82</strong> — <code>/escape-hatch/module-1/lesson-1/</code> — Lesson 1 <a href="viewer.html?id=Ydi2VNj2R3PWRxZo" class="play-btn">OUVRIR ▶</a> <code>vidalytics:Ydi2VNj2R3PWRxZo</code></li>
+                        <li><strong>ID 86</strong> — <code>/escape-hatch/module-1/lesson-2/</code> — Lesson 2 <a href="viewer.html?id=GO2C7qPabteEj4CT" class="play-btn">OUVRIR ▶</a> <code>vidalytics:GO2C7qPabteEj4CT</code></li>
+                        <li><strong>ID 88</strong> — <code>/escape-hatch/module-1/lesson-3/</code> — Lesson 3 <a href="viewer.html?id=zeHc5I2RmkrLEhhg" class="play-btn">OUVRIR ▶</a> <code>vidalytics:zeHc5I2RmkrLEhhg</code></li>
+                        <li><strong>ID 90</strong> — <code>/escape-hatch/module-1/lesson-4/</code> — Lesson 4 <a href="viewer.html?id=LQy1Ng6s2xm6zSDt" class="play-btn">OUVRIR ▶</a> <code>vidalytics:LQy1Ng6s2xm6zSDt</code></li>
                     </ul>
                 </li>
                 <li><strong>ID 92</strong> — <code>/escape-hatch/module-2/</code> — Module 2
                     <ul>
-                        <li><strong>ID 94</strong> — <code>/escape-hatch/module-2/lesson-1/</code> — Lesson 1 <a href="viewer.html?id=kd_0NHAXrfszezou" class="play-btn">OUVRIR</a> <code>vidalytics:kd_0NHAXrfszezou</code></li>
-                        <li><strong>ID 96</strong> — <code>/escape-hatch/module-2/lesson-2/</code> — Lesson 2 <a href="viewer.html?id=2PQu1gqE1UiLu4YM" class="play-btn">OUVRIR</a> <code>vidalytics:2PQu1gqE1UiLu4YM</code></li>
-                        <li><strong>ID 98</strong> — <code>/escape-hatch/module-2/lesson-3/</code> — Lesson 3 <a href="viewer.html?id=L31FgvbbJhkil9s0" class="play-btn">OUVRIR</a> <code>vidalytics:L31FgvbbJhkil9s0</code></li>
-                        <li><strong>ID 100</strong> — <code>/escape-hatch/module-2/lesson-4/</code> — Lesson 4 <a href="viewer.html?id=iOS5hoqYc7_PU1LA" class="play-btn">OUVRIR</a> <code>vidalytics:iOS5hoqYc7_PU1LA</code></li>
+                        <li><strong>ID 94</strong> — <code>/escape-hatch/module-2/lesson-1/</code> — Lesson 1 <a href="viewer.html?id=kd_0NHAXrfszezou" class="play-btn">OUVRIR ▶</a> <code>vidalytics:kd_0NHAXrfszezou</code></li>
+                        <li><strong>ID 96</strong> — <code>/escape-hatch/module-2/lesson-2/</code> — Lesson 2 <a href="viewer.html?id=2PQu1gqE1UiLu4YM" class="play-btn">OUVRIR ▶</a> <code>vidalytics:2PQu1gqE1UiLu4YM</code></li>
+                        <li><strong>ID 98</strong> — <code>/escape-hatch/module-2/lesson-3/</code> — Lesson 3 <a href="viewer.html?id=L31FgvbbJhkil9s0" class="play-btn">OUVRIR ▶</a> <code>vidalytics:L31FgvbbJhkil9s0</code></li>
+                        <li><strong>ID 100</strong> — <code>/escape-hatch/module-2/lesson-4/</code> — Lesson 4 <a href="viewer.html?id=iOS5hoqYc7_PU1LA" class="play-btn">OUVRIR ▶</a> <code>vidalytics:iOS5hoqYc7_PU1LA</code></li>
                     </ul>
                 </li>
-                <li><strong>ID 13</strong> — <code>/p-i-g-method/</code> — P.I.G. Method
+                <li><strong>ID 102</strong> — <code>/escape-hatch/module-3/</code> — Module 3
                     <ul>
-                        <li><strong>ID 26</strong> — <code>/p-i-g-method/module-1/bonus-video/</code> — Bonus Video <a href="viewer.html?id=f_foHsKgvNtmTakp" class="play-btn">OUVRIR</a> — 🖼️ <a href="https://members.thepigmethod.com/wp-content/uploads/2021/11/Module-1-Bonus.png" target="_blank">Module-1-Bonus.png</a> — 📝 <em>« If I Weren't Rich I'd Be Dead »</em></li>
+                        <li><strong>ID 104</strong> — <code>/escape-hatch/module-3/lesson-1/</code> — Lesson 1 <a href="viewer.html?id=DxhnNDsY00PLrp6c" class="play-btn">OUVRIR ▶</a> <code>vidalytics:DxhnNDsY00PLrp6c</code></li>
+                        <li><strong>ID 106</strong> — <code>/escape-hatch/module-3/lesson-2/</code> — Lesson 2 <a href="viewer.html?id=2GZQCRUxSfL4Imc1" class="play-btn">OUVRIR ▶</a> <code>vidalytics:2GZQCRUxSfL4Imc1</code></li>
+                        <li><strong>ID 108</strong> — <code>/escape-hatch/module-3/lesson-3/</code> — Lesson 3 <a href="viewer.html?id=RAJAnV3GpQ_Dfqr6" class="play-btn">OUVRIR ▶</a> <code>vidalytics:RAJAnV3GpQ_Dfqr6</code></li>
+                    </ul>
+                </li>
+                <li><strong>ID 110</strong> — <code>/escape-hatch/module-4/</code> — Module 4
+                    <ul>
+                        <li><strong>ID 112</strong> — <code>/escape-hatch/module-4/lesson-1/</code> — Lesson 1 <a href="viewer.html?id=M957oBs7iafbTlmC" class="play-btn">OUVRIR ▶</a> <code>vidalytics:M957oBs7iafbTlmC</code></li>
+                        <li><strong>ID 114</strong> — <code>/escape-hatch/module-4/lesson-2/</code> — Lesson 2 <a href="viewer.html?id=iksDWgDjXuGAdMuz" class="play-btn">OUVRIR ▶</a> <code>vidalytics:iksDWgDjXuGAdMuz</code></li>
+                        <li><strong>ID 116</strong> — <code>/escape-hatch/module-4/lesson-3/</code> — Lesson 3 <a href="viewer.html?id=6t8Zb3cecylTHBDf" class="play-btn">OUVRIR ▶</a> <code>vidalytics:6t8Zb3cecylTHBDf</code></li>
+                    </ul>
+                </li>
+                <li><strong>ID 118</strong> — <code>/escape-hatch/module-5/</code> — Module 5
+                    <ul>
+                        <li><strong>ID 120</strong> — <code>/escape-hatch/module-5/lesson-1/</code> — Lesson 1 <a href="viewer.html?id=wpuSKg1YShU3aGUb" class="play-btn">OUVRIR ▶</a> <code>vidalytics:wpuSKg1YShU3aGUb</code></li>
+                        <li><strong>ID 122</strong> — <code>/escape-hatch/module-5/lesson-2/</code> — Lesson 2 <a href="viewer.html?id=SMhss5XRf894BZ4g" class="play-btn">VIDEO 1 ▶</a> <a href="viewer.html?id=7sPqkOSHiDI2jZnG" class="play-btn">VIDEO 2 ▶</a> <code>vidalytics:SMhss5XRf894BZ4g</code></li>
+                        <li><strong>ID 126</strong> — <code>/escape-hatch/module-5/lesson-3/</code> — Lesson 3 <a href="viewer.html?id=4TOPAjnfz2uvLq7h" class="play-btn">OUVRIR ▶</a> <code>vidalytics:4TOPAjnfz2uvLq7h</code></li>
+                        <li><strong>ID 128</strong> — <code>/escape-hatch/module-5/lesson-4/</code> — Lesson 4 <a href="viewer.html?id=3dvbF53nuJE1UY0N" class="play-btn">OUVRIR ▶</a> <code>vidalytics:3dvbF53nuJE1UY0N</code></li>
+                    </ul>
+                </li>
+                <li><strong>ID 130</strong> — <code>/escape-hatch/module-6/</code> — Module 6
+                    <ul>
+                        <li><strong>ID 132</strong> — <code>/escape-hatch/module-6/lesson-1/</code> — Lesson 1 <a href="viewer.html?id=8kqprdkET4hZJ_yR" class="play-btn">OUVRIR ▶</a> <code>vidalytics:8kqprdkET4hZJ_yR</code></li>
+                        <li><strong>ID 134</strong> — <code>/escape-hatch/module-6/lesson-2/</code> — Lesson 2 <a href="viewer.html?id=ZFDwf3tp8ghFStqC" class="play-btn">OUVRIR ▶</a> <code>vidalytics:ZFDwf3tp8ghFStqC</code></li>
+                        <li><strong>ID 136</strong> — <code>/escape-hatch/module-6/lesson-3/</code> — Lesson 3 <a href="viewer.html?id=JBDcACQba11uyaIa" class="play-btn">OUVRIR ▶</a> <code>vidalytics:JBDcACQba11uyaIa</code></li>
+                        <li><strong>ID 138</strong> — <code>/escape-hatch/module-6/lesson-4/</code> — Lesson 4 <a href="viewer.html?id=uA78rjf2fK9f0VwV" class="play-btn">OUVRIR ▶</a> <code>vidalytics:uA78rjf2fK9f0VwV</code></li>
+                        <li><strong>ID 140</strong> — <code>/escape-hatch/module-6/lesson-5/</code> — Lesson 5 <a href="viewer.html?id=Q098GxkvtpL45bxD" class="play-btn">OUVRIR ▶</a> <code>vidalytics:Q098GxkvtpL45bxD</code></li>
+                        <li><strong>ID 142</strong> — <code>/escape-hatch/module-6/lesson-6/</code> — Lesson 6 <a href="viewer.html?id=wQV3sEn8zn8gamNT" class="play-btn">OUVRIR ▶</a> <code>vidalytics:wQV3sEn8zn8gamNT</code></li>
+                    </ul>
+                </li>
+                <li><strong>ID 144</strong> — <code>/escape-hatch/module-7/</code> — Module 7
+                    <ul>
+                        <li><strong>ID 146</strong> — <code>/escape-hatch/module-7/lesson-1/</code> — Lesson 1 <a href="viewer.html?id=5XmQ9mbh6rZz8E1x" class="play-btn">OUVRIR ▶</a> <code>vidalytics:5XmQ9mbh6rZz8E1x</code></li>
+                        <li><strong>ID 148</strong> — <code>/escape-hatch/module-7/lesson-2/</code> — Lesson 2 <a href="viewer.html?id=kzurjkacJcFmgFkV" class="play-btn">OUVRIR ▶</a> <code>vidalytics:kzurjkacJcFmgFkV</code></li>
+                        <li><strong>ID 150</strong> — <code>/escape-hatch/module-7/lesson-3/</code> — Lesson 3 <a href="viewer.html?id=GwPCt7oPmTCkAjlj" class="play-btn">OUVRIR ▶</a> <code>vidalytics:GwPCt7oPmTCkAjlj</code></li>
+                        <li><strong>ID 152</strong> — <code>/escape-hatch/module-7/lesson-4/</code> — Lesson 4 <a href="viewer.html?id=rk6MjHckwysv2IC_" class="play-btn">OUVRIR ▶</a> <code>vidalytics:rk6MjHckwysv2IC_</code></li>
+                        <li><strong>ID 154</strong> — <code>/escape-hatch/module-7/lesson-5/</code> — Lesson 5 <a href="viewer.html?id=Supk0g7gLF2AvNw0" class="play-btn">OUVRIR ▶</a> <code>vidalytics:Supk0g7gLF2AvNw0</code></li>
+                        <li><strong>ID 156</strong> — <code>/escape-hatch/module-7/lesson-6/</code> — Lesson 6 <a href="viewer.html?id=mhg7KE8yjQW5EjS0" class="play-btn">OUVRIR ▶</a> <code>vidalytics:mhg7KE8yjQW5EjS0</code></li>
+                    </ul>
+                </li>
+                <li><strong>ID 158</strong> — <code>/escape-hatch/module-8/</code> — Module 8
+                    <ul>
+                        <li><strong>ID 160</strong> — <code>/escape-hatch/module-8/lesson-1/</code> — Lesson 1 <a href="viewer.html?id=yGngTb_ludXQJAmQ" class="play-btn">OUVRIR ▶</a> <code>vidalytics:yGngTb_ludXQJAmQ</code></li>
+                        <li><strong>ID 162</strong> — <code>/escape-hatch/module-8/lesson-2/</code> — Lesson 2 <a href="viewer.html?id=Qv4CwJOxaDHPQJ3G" class="play-btn">OUVRIR ▶</a> <code>vidalytics:Qv4CwJOxaDHPQJ3G</code></li>
+                        <li><strong>ID 164</strong> — <code>/escape-hatch/module-8/lesson-3/</code> — Lesson 3 <a href="viewer.html?id=MG4Ts3oxav0OE20R" class="play-btn">OUVRIR ▶</a> <code>vidalytics:MG4Ts3oxav0OE20R</code></li>
+                        <li><strong>ID 166</strong> — <code>/escape-hatch/module-8/lesson-4/</code> — Lesson 4 <a href="viewer.html?id=p6hHnQtqFzB4amFJ" class="play-btn">OUVRIR ▶</a> <code>vidalytics:p6hHnQtqFzB4amFJ</code></li>
+                        <li><strong>ID 168</strong> — <code>/escape-hatch/module-8/lesson-5/</code> — Lesson 5 <a href="viewer.html?id=o22WffeicNJwVEXS" class="play-btn">OUVRIR ▶</a> <code>vidalytics:o22WffeicNJwVEXS</code></li>
+                        <li><strong>ID 170</strong> — <code>/escape-hatch/module-8/lesson-6/</code> — Lesson 6 <a href="viewer.html?id=jKztm5uhPZzR325p" class="play-btn">OUVRIR ▶</a> <code>vidalytics:jKztm5uhPZzR325p</code></li>
+                    </ul>
+                </li>
+                <li><strong>ID 259</strong> — <code>/escape-hatch/weekly-q-and-a-calls/</code> — Weekly Q and A Calls
+                    <ul>
+                        <li><strong>ID 172</strong> — <code>/escape-hatch/weekly-q-and-a-calls/weekly-q-and-a-calls/</code> — Lesson 1 <a href="viewer.html?id=zE1bqIVZYPEsvCgR" class="play-btn">OUVRIR ▶</a> <code>vidalytics:zE1bqIVZYPEsvCgR</code></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+        <li><strong>ID 182</strong> — <code>/vsl-workshops/</code> — VSL Workshops
+            <ul>
+                <li><strong>ID 184</strong> — Module 1
+                    <ul>
+                        <li><strong>ID 186</strong> — Lesson 1 <a href="viewer.html?id=ZBQ20ByvppbuuB3Z" class="play-btn">OUVRIR ▶</a> <code>vidalytics:ZBQ20ByvppbuuB3Z</code></li>
+                        <li><strong>ID 188</strong> — Lesson 2 <a href="viewer.html?id=JKfjaLtXnOZg9QTo" class="play-btn">OUVRIR ▶</a> <code>vidalytics:JKfjaLtXnOZg9QTo</code></li>
+                    </ul>
+                </li>
+                <li><strong>ID 190</strong> — Module 2
+                    <ul>
+                        <li><strong>ID 192</strong> — Lesson 1 <a href="viewer.html?id=wqRDZRrnJFjp1vwY" class="play-btn">OUVRIR ▶</a> <code>vidalytics:wqRDZRrnJFjp1vwY</code></li>
+                        <li><strong>ID 194</strong> — Lesson 2 <a href="viewer.html?id=7fGD9_0xmeZIzptP" class="play-btn">OUVRIR ▶</a> <code>vidalytics:7fGD9_0xmeZIzptP</code></li>
+                        <li><strong>ID 196</strong> — Lesson 3 <a href="viewer.html?id=5cyyjHk2oZ9B0pwM" class="play-btn">OUVRIR ▶</a> <code>vidalytics:5cyyjHk2oZ9B0pwM</code></li>
+                        <li><strong>ID 198</strong> — Lesson 4 <a href="viewer.html?id=pyA6vLacFWh4AdVP" class="play-btn">OUVRIR ▶</a> <code>vidalytics:pyA6vLacFWh4AdVP</code></li>
+                        <li><strong>ID 200</strong> — Lesson 5 <a href="viewer.html?id=EZQqnDT2IT7I1EAG" class="play-btn">OUVRIR ▶</a> <code>vidalytics:EZQqnDT2IT7I1EAG</code></li>
+                    </ul>
+                </li>
+                <li><strong>ID 202</strong> — Module 3
+                    <ul>
+                        <li><strong>ID 204</strong> — Lesson 1 <a href="viewer.html?id=f20ro3MnQLNah7G4" class="play-btn">OUVRIR ▶</a> <code>vidalytics:f20ro3MnQLNah7G4</code></li>
+                        <li><strong>ID 206</strong> — Lesson 2 <a href="viewer.html?id=3mLWCYmZG_xbiipw" class="play-btn">OUVRIR ▶</a> <code>vidalytics:3mLWCYmZG_xbiipw</code></li>
+                        <li><strong>ID 208</strong> — Lesson 3 <a href="viewer.html?id=kDU98ZYD1z1fovXg" class="play-btn">OUVRIR ▶</a> <code>vidalytics:kDU98ZYD1z1fovXg</code></li>
+                        <li><strong>ID 210</strong> — Lesson 4 <a href="viewer.html?id=wFkKmn30yP8Acuz3" class="play-btn">OUVRIR ▶</a> <code>vidalytics:wFkKmn30yP8Acuz3</code></li>
+                        <li><strong>ID 212</strong> — Lesson 5 <a href="viewer.html?id=yJ6kUs05cCNrayZA" class="play-btn">OUVRIR ▶</a> <code>vidalytics:yJ6kUs05cCNrayZA</code></li>
+                        <li><strong>ID 214</strong> — Lesson 6 <a href="viewer.html?id=fAA0KE2vzoC9NLS6" class="play-btn">OUVRIR ▶</a> <code>vidalytics:fAA0KE2vzoC9NLS6</code></li>
+                    </ul>
+                </li>
+                <li><strong>ID 216</strong> — Module 4
+                    <ul>
+                        <li><strong>ID 218</strong> — Lesson 1 <a href="viewer.html?id=DJtjGijKAHdpV5UE" class="play-btn">OUVRIR ▶</a> <code>vidalytics:DJtjGijKAHdpV5UE</code></li>
+                        <li><strong>ID 220</strong> — Lesson 2 <a href="viewer.html?id=B2El9MWPbDKckXCH" class="play-btn">OUVRIR ▶</a> <code>vidalytics:B2El9MWPbDKckXCH</code></li>
+                        <li><strong>ID 222</strong> — Lesson 3 <a href="viewer.html?id=GcHqitwWpizCks_F" class="play-btn">OUVRIR ▶</a> <code>vidalytics:GcHqitwWpizCks_F</code></li>
+                    </ul>
+                </li>
+                <li><strong>ID 228</strong> — Module 5
+                    <ul>
+                        <li><strong>ID 230</strong> — Lesson 1 <a href="viewer.html?id=KPvURz2CE331zuXi" class="play-btn">OUVRIR ▶</a> <code>vidalytics:KPvURz2CE331zuXi</code></li>
+                        <li><strong>ID 232</strong> — Lesson 2 <a href="viewer.html?id=L08rOEKbsq_VLMFe" class="play-btn">OUVRIR ▶</a> <code>vidalytics:L08rOEKbsq_VLMFe</code></li>
+                        <li><strong>ID 234</strong> — Lesson 3 <a href="viewer.html?id=8Xh_tcXXePvwQoQ_" class="play-btn">OUVRIR ▶</a> <code>vidalytics:8Xh_tcXXePvwQoQ_</code></li>
+                        <li><strong>ID 236</strong> — Lesson 4 <a href="viewer.html?id=sAKw9nxisN475KQg" class="play-btn">OUVRIR ▶</a> <code>vidalytics:sAKw9nxisN475KQg</code></li>
+                        <li><strong>ID 238</strong> — Lesson 5 <a href="viewer.html?id=nFl3dCGubp3G_eDM" class="play-btn">OUVRIR ▶</a> <code>vidalytics:nFl3dCGubp3G_eDM</code></li>
+                        <li><strong>ID 240</strong> — Lesson 6 <a href="viewer.html?id=ssJHgyBRLj1Tszuu" class="play-btn">OUVRIR ▶</a> <code>vidalytics:ssJHgyBRLj1Tszuu</code></li>
+                        <li><strong>ID 242</strong> — Lesson 7 <a href="viewer.html?id=c6r2ObDWF_Do3Eht" class="play-btn">OUVRIR ▶</a> <code>vidalytics:c6r2ObDWF_Do3Eht</code></li>
+                        <li><strong>ID 244</strong> — Lesson 8 <a href="viewer.html?id=vpnoaJcrl7O4AYAO" class="play-btn">OUVRIR ▶</a> <code>vidalytics:vpnoaJcrl7O4AYAO</code></li>
+                    </ul>
+                </li>
+                <li><strong>ID 246</strong> — Module 6
+                    <ul>
+                        <li><strong>ID 248</strong> — Lesson 1 <a href="viewer.html?id=Tim5HqFngMrdHMw4" class="play-btn">OUVRIR ▶</a> <code>vidalytics:Tim5HqFngMrdHMw4</code></li>
+                        <li><strong>ID 250</strong> — Lesson 2 <a href="viewer.html?id=caYxEY9OUW7nC2fB" class="play-btn">OUVRIR ▶</a> <code>vidalytics:caYxEY9OUW7nC2fB</code></li>
+                        <li><strong>ID 252</strong> — Lesson 3 <a href="viewer.html?id=bgEbGOBeJaYryzTi" class="play-btn">OUVRIR ▶</a> <code>vidalytics:bgEbGOBeJaYryzTi</code></li>
+                        <li><strong>ID 254</strong> — Lesson 4 <a href="viewer.html?id=869QIMNHWSiA8TpD" class="play-btn">OUVRIR ▶</a> <code>vidalytics:869QIMNHWSiA8TpD</code></li>
+                        <li><strong>ID 256</strong> — Lesson 5 <a href="viewer.html?id=wVqLTsaS2HvkffPJ" class="play-btn">OUVRIR ▶</a> <code>vidalytics:wVqLTsaS2HvkffPJ</code></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+        <li><strong>ID 13</strong> — <code>/p-i-g-method/</code> — P.I.G. Method
+            <ul>
+                <li><strong>ID 16</strong> — Module 1
+                    <ul>
+                        <li><strong>ID 26</strong> — Bonus Video <a href="viewer.html?id=f_foHsKgvNtmTakp" class="play-btn">OUVRIR ▶</a> <code>vidalytics:f_foHsKgvNtmTakp</code> — 🖼️ <a href="https://members.thepigmethod.com/wp-content/uploads/2021/11/Module-1-Bonus.png" target="_blank">[thumbnail]</a> — 📝 <em>« If I Weren't Rich I'd Be Dead »</em></li>
+                        <li><strong>ID 7</strong> — Introduction <a href="viewer.html?id=lzYvqpca_vriwv_F" class="play-btn">OUVRIR ▶</a> <code>vidalytics:lzYvqpca_vriwv_F</code> — 🖼️ <a href="https://members.thepigmethod.com/wp-content/uploads/2021/11/Module-1-Introduction.png" target="_blank">[thumbnail]</a> — 📝 <em>« Intro & Welcome »</em></li>
+                        <li><strong>ID 15</strong> — Lesson 1 <a href="viewer.html?id=Tal7urcef9LI_ZJC" class="play-btn">OUVRIR ▶</a> <code>vidalytics:Tal7urcef9LI_ZJC</code> — 🖼️ <a href="https://members.thepigmethod.com/wp-content/uploads/2021/11/Module-1-Lesson-1.png" target="_blank">[thumbnail]</a> — 📝 <em>« Mind-Reading Your Market »</em></li>
+                        <li><strong>ID 20</strong> — Lesson 2 <a href="viewer.html?id=_7MjfW5bcaZsQNgx" class="play-btn">OUVRIR ▶</a> <code>vidalytics:_7MjfW5bcaZsQNgx</code> — 🖼️ <a href="https://members.thepigmethod.com/wp-content/uploads/2021/11/Module-1-Lesson-2.png" target="_blank">[thumbnail]</a> — 📝 <em>« The Deep, Irrational Desires of Your Market »</em></li>
+                        <li><strong>ID 22</strong> — Lesson 3 <a href="viewer.html?id=LBJ4BCOpILxa3jtL" class="play-btn">OUVRIR ▶</a> <code>vidalytics:LBJ4BCOpILxa3jtL</code> — 🖼️ <a href="https://members.thepigmethod.com/wp-content/uploads/2021/11/Module-1-Lesson-3.png" target="_blank">[thumbnail]</a> — 📝 <em>« The 7 Deadly Sins »</em></li>
+                        <li><strong>ID 24</strong> — Lesson 4 <a href="viewer.html?id=qq9UWR4PLdCgbVjR" class="play-btn">OUVRIR ▶</a> <code>vidalytics:qq9UWR4PLdCgbVjR</code> — 🖼️ <a href="https://members.thepigmethod.com/wp-content/uploads/2021/11/Module-1-Lesson-4.png" target="_blank">[thumbnail]</a> — 📝 <em>« The Empathy Game »</em></li>
+                    </ul>
+                </li>
+                <li><strong>ID 28</strong> — Module 2
+                    <ul>
+                        <li><strong>ID 32</strong> — Lesson 2 <a href="viewer.html?id=kPE0qm4Fke2kROm3" class="play-btn">OUVRIR ▶</a> <code>vidalytics:kPE0qm4Fke2kROm3</code> — 🖼️ <a href="https://members.thepigmethod.com/wp-content/uploads/2021/11/Module-2-Lesson-2.png" target="_blank">[thumbnail]</a> — 📝 <em>« Holding Out For A Hero »</em></li>
+                        <li><strong>ID 34</strong> — Lesson 3 <a href="viewer.html?id=iCX68ws8PT8GBEOl" class="play-btn">OUVRIR ▶</a> <code>vidalytics:iCX68ws8PT8GBEOl</code> — 🖼️ <a href="https://members.thepigmethod.com/wp-content/uploads/2021/11/Module-2-Lesson-3.png" target="_blank">[thumbnail]</a> — 📝 <em>« Villains »</em></li>
+                        <li><strong>ID 36</strong> — Lesson 4 <a href="viewer.html?id=gzbmHnehstTV7oNK" class="play-btn">OUVRIR ▶</a> <code>vidalytics:gzbmHnehstTV7oNK</code> — 🖼️ <a href="https://members.thepigmethod.com/wp-content/uploads/2021/11/Module-2-Lesson-4.png" target="_blank">[thumbnail]</a> — 📝 <em>« The Moment of Crisis »</em></li>
+                        <li><strong>ID 38</strong> — Lesson 5 <a href="viewer.html?id=zDM6izNLHn_fvUmg" class="play-btn">OUVRIR ▶</a> <code>vidalytics:zDM6izNLHn_fvUmg</code> — 🖼️ <a href="https://members.thepigmethod.com/wp-content/uploads/2021/11/Module-2-Lesson-5.png" target="_blank">[thumbnail]</a> — 📝 <em>« Set the Table for The Choice »</em></li>
+                        <li><strong>ID 40</strong> — Lesson 6 <a href="viewer.html?id=Xoy_ldJt9ZUyo10j" class="play-btn">OUVRIR ▶</a> <code>vidalytics:Xoy_ldJt9ZUyo10j</code> — 🖼️ <a href="https://members.thepigmethod.com/wp-content/uploads/2021/11/Module-2-Lesson-6.png" target="_blank">[thumbnail]</a> — 📝 <em>« The Choice »</em></li>
+                        <li><strong>ID 42</strong> — Lesson 7 <a href="viewer.html?id=mJZ3WqczViC1Ttqg" class="play-btn">OUVRIR ▶</a> <code>vidalytics:mJZ3WqczViC1Ttqg</code> — 🖼️ <a href="https://members.thepigmethod.com/wp-content/uploads/2021/11/Module-2-Lesson-7.png" target="_blank">[thumbnail]</a> — 📝 <em>« Dead Ends »</em></li>
+                        <li><strong>ID 44</strong> — Lesson 8 <a href="viewer.html?id=b6omAjLPIUQW88Yc" class="play-btn">OUVRIR ▶</a> <code>vidalytics:b6omAjLPIUQW88Yc</code> — 🖼️ <a href="https://members.thepigmethod.com/wp-content/uploads/2021/11/Module-2-Lesson-8.png" target="_blank">[thumbnail]</a> — 📝 <em>« Secrets and Magic »</em></li>
+                        <li><strong>ID 46</strong> — Lesson 9 <a href="viewer.html?id=52yRn_1TwLnjLRSj" class="play-btn">OUVRIR ▶</a> <code>vidalytics:52yRn_1TwLnjLRSj</code> — 🖼️ <a href="https://members.thepigmethod.com/wp-content/uploads/2021/11/Module-2-Lesson-9.png" target="_blank">[thumbnail]</a> — 📝 <em>« Amazing Results! »</em></li>
+                        <li><strong>ID 48</strong> — Lesson 10 <a href="viewer.html?id=vnRRjdEtavboG3vb" class="play-btn">OUVRIR ▶</a> <code>vidalytics:vnRRjdEtavboG3vb</code> — 🖼️ <a href="https://members.thepigmethod.com/wp-content/uploads/2021/11/Module-2-Lesson-10.png" target="_blank">[thumbnail]</a> — 📝 <em>« The Secret Gets Out »</em></li>
+                        <li><strong>ID 50</strong> — Lesson 11 <a href="viewer.html?id=UIQcVmuOvU1cr4xm" class="play-btn">OUVRIR ▶</a> <code>vidalytics:UIQcVmuOvU1cr4xm</code> — 🖼️ <a href="https://members.thepigmethod.com/wp-content/uploads/2021/11/Module-2-Lesson-11.png" target="_blank">[thumbnail]</a> — 📝 <em>« Product Creation Myth »</em></li>
+                        <li><strong>ID 52</strong> — Lesson 12 <a href="viewer.html?id=_t7mN5Zr_miTrGiM" class="play-btn">OUVRIR ▶</a> <code>vidalytics:_t7mN5Zr_miTrGiM</code> — 🖼️ <a href="https://members.thepigmethod.com/wp-content/uploads/2021/11/Module-2-Lesson-12.png" target="_blank">[thumbnail]</a> — 📝 <em>« Emotional Callback »</em></li>
+                        <li><strong>ID 54</strong> — Lesson 13 <a href="viewer.html?id=Rfu7ZpCzF9CHM_9s" class="play-btn">OUVRIR ▶</a> <code>vidalytics:Rfu7ZpCzF9CHM_9s</code> — 🖼️ <a href="https://members.thepigmethod.com/wp-content/uploads/2021/11/Module-2-Lesson-13.png" target="_blank">[thumbnail]</a> — 📝 <em>« How to Write With Drama & Emotion »</em></li>
+                        <li><strong>ID 71</strong> — Lesson 14 <a href="viewer.html?id=Tf0Dkf_D4Gjyib7H" class="play-btn">OUVRIR ▶</a> <code>vidalytics:Tf0Dkf_D4Gjyib7H</code></li>
+                        <li><strong>ID 30</strong> — Lesson 1 <a href="viewer.html?id=fsvI5IraymYS9pWS" class="play-btn">OUVRIR ▶</a> <code>vidalytics:fsvI5IraymYS9pWS</code> — 🖼️ <a href="https://members.thepigmethod.com/wp-content/uploads/2021/11/Module-2-Lesson-1.png" target="_blank">[thumbnail]</a> — 📝 <em>« The P.I.G Story & Beat Map Revealed »</em></li>
+                    </ul>
+                </li>
+                <li><strong>ID 56</strong> — Bonus 1
+                    <ul>
+                        <li><strong>ID 69</strong> — VSL Deep Dive 1 <a href="viewer.html?id=gAMbHZyo20KpJcsL" class="play-btn">OUVRIR ▶</a> <code>vidalytics:gAMbHZyo20KpJcsL</code></li>
+                        <li><strong>ID 65</strong> — VSL Deep Dive 2 <a href="viewer.html?id=pWstZ5tw_rosJstE" class="play-btn">OUVRIR ▶</a> <code>vidalytics:pWstZ5tw_rosJstE</code></li>
+                        <li><strong>ID 58</strong> — VSL Deep Dive 3 <a href="viewer.html?id=DNUV75NBUJXsI2GW" class="play-btn">OUVRIR ▶</a> <code>vidalytics:DNUV75NBUJXsI2GW</code></li>
+                        <li><strong>ID 67</strong> — VSL Deep Dive 4 <a href="viewer.html?id=tS_KpX1o3bzLIEMM" class="play-btn">OUVRIR ▶</a> <code>vidalytics:tS_KpX1o3bzLIEMM</code></li>
+                        <li><strong>ID 63</strong> — VSL Deep Dive 5 <a href="viewer.html?id=3QAgTfbOvpMU0RIG" class="play-btn">OUVRIR ▶</a> <code>vidalytics:3QAgTfbOvpMU0RIG</code></li>
+                        <li><strong>ID 61</strong> — VSL Deep Dive 6 <a href="viewer.html?id=N8Bw1EwKBd3b3cuC" class="play-btn">OUVRIR ▶</a> <code>vidalytics:N8Bw1EwKBd3b3cuC</code></li>
+                    </ul>
+                </li>
+                <li><strong>ID 379</strong> — Weekly Calls
+                    <ul>
+                        <li><strong>ID 381</strong> — Call 1 <a href="viewer.html?id=jQFi4wjjmRfQy5Yp" class="play-btn">OUVRIR ▶</a> <code>vidalytics:jQFi4wjjmRfQy5Yp</code></li>
+                        <li><strong>ID 386</strong> — Call 2 <a href="viewer.html?id=McOSzXMYqtKTjBg4" class="play-btn">OUVRIR ▶</a> <code>vidalytics:McOSzXMYqtKTjBg4</code></li>
+                        <li><strong>ID 389</strong> — Call 3 <a href="viewer.html?id=6rKUr2TjyIxgJ2Oa" class="play-btn">OUVRIR ▶</a> <code>vidalytics:6rKUr2TjyIxgJ2Oa</code></li>
+                        <li><strong>ID 391</strong> — Call 4 <a href="viewer.html?id=LwzQldACVL9Kh0MO" class="play-btn">OUVRIR ▶</a> <code>vidalytics:LwzQldACVL9Kh0MO</code></li>
+                        <li><strong>ID 394</strong> — Call 5 <a href="viewer.html?id=4X2GuKPjaEXfrxmS" class="play-btn">OUVRIR ▶</a> <code>vidalytics:4X2GuKPjaEXfrxmS</code></li>
+                        <li><strong>ID 396</strong> — Call 6 <a href="viewer.html?id=i2R0uFluSDqRpIc6" class="play-btn">OUVRIR ▶</a> <code>vidalytics:i2R0uFluSDqRpIc6</code></li>
+                        <li><strong>ID 399</strong> — Call 7 <a href="viewer.html?id=znhEUhm4QBlRmxYa" class="play-btn">OUVRIR ▶</a> <code>vidalytics:znhEUhm4QBlRmxYa</code></li>
+                        <li><strong>ID 401</strong> — Call 8 <a href="viewer.html?id=ARH3i_9VbotrdeIH" class="play-btn">OUVRIR ▶</a> <code>vidalytics:ARH3i_9VbotrdeIH</code></li>
+                        <li><strong>ID 404</strong> — Call 9 <a href="viewer.html?id=vVXdwZblhi9QZCEs" class="play-btn">OUVRIR ▶</a> <code>vidalytics:vVXdwZblhi9QZCEs</code></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+        <li><strong>ID 409</strong> — <code>/ultimate/</code> — P.I.G. Ultimate
+            <ul>
+                <li><strong>ID 412</strong> — March 2022 <a href="viewer.html?id=i1Hp2QjfptoYgfVk" class="play-btn">OUVRIR ▶</a> — 📝 <em>« The P.I.G. Method Ultimate »</em>
+                    <ul>
+                        <li><strong>ID 414</strong> — Call 1 <a href="viewer.html?id=i1Hp2QjfptoYgfVk" class="play-btn">OUVRIR ▶</a> <code>vidalytics:i1Hp2QjfptoYgfVk</code></li>
+                        <li><strong>ID 421</strong> — Call 2 <a href="viewer.html?id=Lf6sWaV_e7J_27Dl" class="play-btn">OUVRIR ▶</a> <code>vidalytics:Lf6sWaV_e7J_27Dl</code></li>
+                    </ul>
+                </li>
+                <li><strong>ID 417</strong> — April 2022
+                    <ul>
+                        <li><strong>ID 429</strong> — Call 3 <a href="viewer.html?id=GeMto5NmftWGnJnb" class="play-btn">OUVRIR ▶</a> <code>vidalytics:GeMto5NmftWGnJnb</code></li>
+                        <li><strong>ID 434</strong> — Call 4 <a href="viewer.html?id=YXG3tTbUWSUuWNXC" class="play-btn">OUVRIR ▶</a> <code>vidalytics:YXG3tTbUWSUuWNXC</code></li>
+                        <li><strong>ID 438</strong> — Call 5 <a href="viewer.html?id=xEYh1yVDmEoujKhX" class="play-btn">OUVRIR ▶</a> <code>vidalytics:xEYh1yVDmEoujKhX</code></li>
                     </ul>
                 </li>
             </ul>
         </li>
     </ul>
 
-    <p style="text-align:center; color:#888; font-size:0.8em; margin-top:50px;">
-        Hébergé sur GitHub Pages pour faciliter la détection par Download Helper.
-    </p>
+    <hr>
+
+    <h2>Table des 20 thumbnails avec leur titre pédagogique</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Fichier</th>
+                <th>Titre pédagogique (OCR)</th>
+                <th>Pages</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>301</td><td><a href="https://members.thepigmethod.com/wp-content/uploads/2021/11/Module-1-Bonus.png" target="_blank">Module-1-Bonus.png</a></td><td><strong>If I Weren't Rich I'd Be Dead</strong></td><td><code>/p-i-g-method/module-1/bonus-video/</code></td></tr>
+            <tr><td>302</td><td><a href="https://members.thepigmethod.com/wp-content/uploads/2021/11/Module-1-Introduction.png" target="_blank">Module-1-Introduction.png</a></td><td><strong>Intro & Welcome</strong></td><td><code>/p-i-g-method/module-1/introduction/</code></td></tr>
+            <tr><td>303</td><td><a href="https://members.thepigmethod.com/wp-content/uploads/2021/11/Module-1-Lesson-1.png" target="_blank">Module-1-Lesson-1.png</a></td><td><strong>Mind-Reading Your Market</strong></td><td><code>/p-i-g-method/module-1/lesson-1/</code></td></tr>
+        </tbody>
+    </table>
+
+</div>
 
 </body>
 </html>
